@@ -1,14 +1,17 @@
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../../environments/environment';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { AuthRoutingModule } from './auth-routing.module';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule,
-    AuthRoutingModule
-  ]
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    FormsModule,
+  ],
+  // ...
 })
-export class AuthModule { }
+export class AppModule { }
